@@ -50,8 +50,8 @@ Requires:	%{name} = %{version}
 Xbase development files.
 
 %description devel -l pl
-Zawiera pliki nag³ówkowe potrzebne przy tworzeniu oprogramowania aplikacji
-u¿ywaj±cych Xbase.
+Zawiera pliki nag³ówkowe potrzebne przy tworzeniu oprogramowania
+aplikacji u¿ywaj±cych Xbase.
 
 %prep
 %setup -q 
@@ -68,6 +68,7 @@ export CPPFLAGS
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
 gzip -9nf ChangeLog TODO AUTHORS NEWS README
