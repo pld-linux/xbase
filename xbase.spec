@@ -2,11 +2,12 @@ Summary:	Xbase DBMS Library
 Summary(pl):	Xbase biblioteka dla ró¿nych baz danych.
 Name:		xbase
 Version:	1.8.1
-Release:	3
+Release:	4
 Copyright:	LGPL
 Group:		Applications/Libraries
 Group(pl):	Aplikacje/Biblioteki
 Source:		ftp://www.startech.keller.tx.us/pub/xbase/%name-%version.tar.gz
+Patch:		xbase-autoconf.patch
 URL:		http://www.startech.keller.tx.us/xbase.html
 Buildroot:	/tmp/%{name}-%{version}-root
 
@@ -47,12 +48,15 @@ oraz modu³ dla Turbo Vision.
 
 %prep
 %setup -q 
+%patch -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-CPPFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-implicit-templates" \
-./configure %{_target_platform} \
-	--prefix=%{_prefix} \
+automake
+autoconf
+LDFLAGS="-s"
+CPPFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-implicit-templates"
+export LDFLAGS CPPFLAGS
+%configure \
 	--enable-nls \
 	--with-exceptions \
 	--with-index-ndx \
@@ -61,13 +65,11 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make prefix=$RPM_BUILD_ROOT/usr install
-
-install -d $RPM_BUILD_ROOT/usr/doc/%name-%version
+make DESTDIR=$RPM_BUILD_ROOT install
 
 gzip -9nf ChangeLog TODO AUTHORS NEWS README
 
-#strip $RPM_BUILD_ROOT/usr/{bin/*,lib/lib*.so.*.*}
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -78,12 +80,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *gz
-%attr(755,root,root)%{_bindir}/*
-%attr(755,root,root)%{_libdir}/lib*.so*.*
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %doc html/{*html,*gif,*jpg}
-%attr(755,root,root)%{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/*
-%{_libdir}/libxbase.la
