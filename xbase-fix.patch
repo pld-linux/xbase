@@ -1,0 +1,48 @@
+--- xbase-2.1.1/xbase/xbexcept.h.orig	2003-08-16 21:59:39.000000000 +0200
++++ xbase-2.1.1/xbase/xbexcept.h	2004-04-09 23:15:25.793063600 +0200
+@@ -74,11 +74,11 @@
+ #include <exception>
+ #elif HAVE_G___EXCEPTION_H
+ #include <g++/exception.h>
+-#elif
++#else
+ #error "Exceptions are unsupported on your system."
+ #endif
+ 
+-#ifdef __BORLANDC__
++#if defined(__BORLANDC__) || defined(HAVE_EXCEPTION)
+ #define XB_THROW throw ()
+ using std::exception;
+ #else
+--- xbase-2.1.1/configure.in.orig	2004-04-09 23:05:32.000000000 +0200
++++ xbase-2.1.1/configure.in	2004-04-09 23:18:35.402238624 +0200
+@@ -92,7 +92,7 @@
+ 
+ 
+ # setup topdir
+-topdir = `pwd`
++topdir=`pwd`
+ AC_SUBST(topdir)
+ 
+ 
+@@ -193,6 +193,9 @@
+     enable_exceptions="$withval", enable_exceptions="no")
+ if test "$enable_exceptions" = "yes"; then
+   AC_DEFINE(HAVE_EXCEPTIONS, 1, HAVE_EXCEPTIONS)
++  AC_LANG_PUSH(C++)
++  AC_CHECK_HEADERS(exception g++/exception)
++  AC_LANG_POP
+ fi
+     
+ # compile in support for castellano dates
+--- xbase-2.1.1/libtest/Makefile.am.orig	2003-08-12 22:44:46.000000000 +0200
++++ xbase-2.1.1/libtest/Makefile.am	2004-04-09 23:27:39.568512776 +0200
+@@ -1,6 +1,6 @@
+ 
+-INCLUDES= -I../xbase
+-LDADD	= -L../xbase -lxbase
++INCLUDES= -I$(topdir) -I$(topdir)/xbase
++LDADD	= $(topdir)/xbase/libxbase.la
+ 
+ INSTALL_PROGRAM = @INSTALL@
+ 
