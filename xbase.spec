@@ -7,7 +7,6 @@ Copyright:	LGPL
 Group:		Applications/Libraries
 Group(pl):	Aplikacje/Biblioteki
 Source:		ftp://www.startech.keller.tx.us/pub/xbase/%name-%version.tar.gz
-#Source1:	ftp://www.startech.keller.tx.us/pub/xbase/%{name}174c-html.tar.gz
 URL:		http://www.startech.keller.tx.us/xbase.html
 Buildroot:	/tmp/%{name}-%{version}-root
 
@@ -96,6 +95,7 @@ rm -rf $RPM_BUILD_ROOT
   added "-fno-rtti -fno-implicit-templates",
 - added "-s" to LDFLAGS,
 - added stripping shared libraries,
+- added URL,
 - fixed Copyright (LGPL).
 
 * Wed Apr 14 1999 Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>
