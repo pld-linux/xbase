@@ -51,7 +51,7 @@ oraz modu³ dla Turbo Vision.
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 CPPFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-implicit-templates" \
-./configure %{_target} \
+./configure %{_target_platform} \
 	--prefix=%{_prefix} \
 	--enable-nls \
 	--with-exceptions \
