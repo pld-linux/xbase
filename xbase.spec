@@ -10,7 +10,7 @@ Source:		ftp://www.startech.keller.tx.us/pub/xbase/%name-%version.tar.gz
 Patch:		xbase-autoconf.patch
 URL:		http://www.startech.keller.tx.us/xbase.html
 BuildRequires:	libstdc++-devel
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This product provides C and C++ programmers a class and function library for
