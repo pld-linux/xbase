@@ -2,7 +2,7 @@ Summary:	Xbase DBMS Library
 Summary(pl):	Xbase biblioteka dla ró¿nych baz danych.
 Name:		xbase
 Version:	1.8.1
-Release:	1
+Release:	2
 Copyright:	LGPL
 Group:		Applications/Libraries
 Group(pl):	Aplikacje/Biblioteki
@@ -89,6 +89,10 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/libxbase.la
 
 %changelog
+* Thu Apr 22 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.8.1-2]
+- recompiles on new rpm.
+
 * Thu Apr 15 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.8.1-1]
 - added passing $RPM_OPT_FLAGS in CFLAGS and CPPFLAGS; in CPPFLAGS
