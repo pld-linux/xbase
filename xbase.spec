@@ -66,7 +66,7 @@ export LDFLAGS CPPFLAGS
 	--with-exceptions \
 	--with-index-ndx \
 	--with-index-ntx
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
