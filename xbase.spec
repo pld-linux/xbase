@@ -87,28 +87,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root)%{_libdir}/lib*.so
 %{_includedir}/*
 %{_libdir}/libxbase.la
-
-%changelog
-* Sat May 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.8.1-3]
-- more rpm macros.
-
-* Thu Apr 22 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.8.1-2]
-- recompiles on new rpm.
-
-* Thu Apr 15 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.8.1-1]
-- added passing $RPM_OPT_FLAGS in CFLAGS and CPPFLAGS; in CPPFLAGS
-  added "-fno-rtti -fno-implicit-templates",
-- added "-s" to LDFLAGS,
-- added stripping shared libraries,
-- added URL,
-- fixed Copyright (LGPL).
-
-* Wed Apr 14 1999 Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>
-- separate file,
-- update to version 1.8.1
-
-* Sat Dec 12 1998 Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>
-- building RPM.
