@@ -1,0 +1,24 @@
+diff -Nru xbase-1.8.1/aclocal.m4 xbase-1.8.1.new/aclocal.m4
+--- xbase-1.8.1/aclocal.m4	Sun Aug  1 23:17:58 1999
++++ xbase-1.8.1.new/aclocal.m4	Sun Aug  1 23:11:54 1999
+@@ -1039,7 +1039,7 @@
+ dnl AM_INIT_AUTOMAKE(package,version, [no-define])
+ 
+ AC_DEFUN(AM_INIT_AUTOMAKE,
+-[AC_REQUIRE([AM_PROG_INSTALL])
++[AC_REQUIRE([AC_PROG_INSTALL])
+ PACKAGE=[$1]
+ AC_SUBST(PACKAGE)
+ VERSION=[$2]
+diff -Nru xbase-1.8.1/xbase/Makefile.am xbase-1.8.1.new/xbase/Makefile.am
+--- xbase-1.8.1/xbase/Makefile.am	Sun Aug  1 23:18:31 1999
++++ xbase-1.8.1.new/xbase/Makefile.am	Fri Mar 19 11:56:33 1999
+@@ -25,7 +25,7 @@
+         xbconfig.h
+ 
+ install-data-hook:
+-	(cd $(includedir); rm -f xbase.h; ln -s xbase/xbase.h xbase.h)
++	(cd $(DESTDIR)$(includedir); rm -f xbase.h; ln -s xbase/xbase.h xbase.h)
+ 
+ libxbase_la_SOURCES = dbf.cpp exp.cpp expfunc.cpp expproc.cpp fields.cpp \
+ 	html.cpp lock.cpp memo.cpp ndx.cpp stack.cpp xbase.cpp xdate.cpp \
