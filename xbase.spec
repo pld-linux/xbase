@@ -2,7 +2,7 @@ Summary:	Xbase DBMS Library
 Summary(pl):	Xbase biblioteka dla ró¿nych baz danych.
 Name:		xbase
 Version:	1.8.1
-Release:	2
+Release:	3
 Copyright:	LGPL
 Group:		Applications/Libraries
 Group(pl):	Aplikacje/Biblioteki
@@ -52,7 +52,7 @@ oraz modu³ dla Turbo Vision.
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 CPPFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-implicit-templates" \
 ./configure %{_target} \
-	--prefix=/usr \
+	--prefix=%{_prefix} \
 	--enable-nls \
 	--with-exceptions \
 	--with-index-ndx \
@@ -67,7 +67,7 @@ install -d $RPM_BUILD_ROOT/usr/doc/%name-%version
 
 gzip -9nf ChangeLog TODO AUTHORS NEWS README
 
-strip $RPM_BUILD_ROOT/usr/{bin/*,lib/lib*.so.*.*}
+#strip $RPM_BUILD_ROOT/usr/{bin/*,lib/lib*.so.*.*}
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -89,6 +89,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libxbase.la
 
 %changelog
+* Sat May 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.8.1-3]
+- more rpm macros.
+
 * Thu Apr 22 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.8.1-2]
 - recompiles on new rpm.
