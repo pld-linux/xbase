@@ -2,7 +2,7 @@ Summary:	XBase - xbase-compatible C++ class library
 Summary(pl):	XBase - kompatybilna z xbase biblioteka klas C++
 Name:		xbase
 Version:	2.1.1
-Release:	1
+Release:	2
 License:	LGPL (library), GPL (programs)
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/xdb/%{name}-%{version}.tar.gz
