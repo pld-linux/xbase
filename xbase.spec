@@ -30,7 +30,7 @@ Bibliotek zawieraj±ca zespó³ procerur i funkcji pozwalaj±cych na
 podstawowe operacje na na formatacie danych dBASE III i czê¶ciowo
 dBASE IV.
 
-Bazowo projekt powstawa³ pod Linuxa ale obecnie jest u¿ywany na wielu
+Bazowo projekt powstawa³ pod Linuksa ale obecnie jest u¿ywany na wielu
 platformach.
 
 %package devel
