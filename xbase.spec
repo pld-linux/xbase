@@ -4,8 +4,8 @@ Name:		xbase
 Version:	1.8.1
 Release:	7
 Copyright:	LGPL
-Group:		Applications/Libraries
-Group(pl):	Aplikacje/Biblioteki
+Group:		Libraries
+Group(pl):	Biblioteki
 Source:		ftp://www.startech.keller.tx.us/pub/xbase/%name-%version.tar.gz
 Patch:		xbase-autoconf.patch
 URL:		http://www.startech.keller.tx.us/xbase.html
@@ -36,8 +36,8 @@ platformach.
 %package devel
 Summary:	Xbase development
 Summary(pl):	Xbase delelopment
-Group:		Applications/Libraries
-Group(pl):	Aplikacje/Biblioteki
+Group:		Development/Libraries
+Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
