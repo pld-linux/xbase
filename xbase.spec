@@ -37,6 +37,7 @@ Summary(pl):	Pliki dla programistów u¿ywaj±cych XBase
 License:	LGPL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libstdc++-devel
 
 %description devel
 This package contains XBase development files.
