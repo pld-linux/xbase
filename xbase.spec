@@ -1,17 +1,16 @@
 Summary:	Xbase DBMS Library
 Summary(pl):	Xbase - biblioteka dla ró¿nych baz danych
 Name:		xbase
-Version:	1.8.1
-Release:	9
+Version:	2.0.0
+Release:	1
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
 Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source0:	ftp://www.startech.keller.tx.us/pub/xbase/%name-%version.tar.gz
-Patch0:		%{name}-autoconf.patch
-URL:		http://www.startech.keller.tx.us/xbase.html
+Source0:	http://prdownloads.sourceforge.net/xdb/%{name}-%{version}.tar.gz
+URL:		http://linux.techass.com/projects/xdb/
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -56,14 +55,11 @@ u¿ywaj±cych Xbase.
 
 %prep
 %setup -q 
-%patch -p1
 
 %build
-automake -a -c
-autoconf
 CPPFLAGS="%{rpmcflags} -fno-rtti -fno-implicit-templates"
 export CPPFLAGS
-%configure \
+%configure2_13 \
 	--enable-nls \
 	--with-exceptions \
 	--with-index-ndx \
@@ -85,12 +81,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *gz
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/[^x]*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc html/{*html,*gif,*jpg}
+%doc html/{*.html,*.gif,*.jpg}
+%attr(755,root,root) %{_bindir}/xbase-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
-%{_includedir}/*
+%{_includedir}/xbase
