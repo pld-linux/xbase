@@ -1,14 +1,16 @@
 Summary:	Xbase DBMS Library
-Summary(pl):	Xbase biblioteka dla ró¿nych baz danych.
+Summary(pl):	Xbase - biblioteka dla ró¿nych baz danych
 Name:		xbase
 Version:	1.8.1
 Release:	7
 License:	LGPL
 Group:		Libraries
+Group(de):	Libraries
+Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	ftp://www.startech.keller.tx.us/pub/xbase/%name-%version.tar.gz
-Patch0:		xbase-autoconf.patch
+Patch0:		%{name}-autoconf.patch
 URL:		http://www.startech.keller.tx.us/xbase.html
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -33,13 +35,14 @@ Bibliotek zawieraj±ca zespó³ procerur i funkcji pozwalaj±cych na
 podstawowe operacje na na formatacie danych dBASE III i czê¶ciowo
 dBASE IV.
 
-Bazowo projekt powstawa³ po Linuxa ale obecnie jest urzywany na wielu
+Bazowo projekt powstawa³ pod Linuxa ale obecnie jest u¿ywany na wielu
 platformach.
 
 %package devel
 Summary:	Xbase development
-Summary(pl):	Xbase delelopment
+Summary(pl):	Xbase dla programistów
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
@@ -48,7 +51,7 @@ Requires:	%{name} = %{version}
 Include headers and Turbo Vision module in source.
 
 %description devel -l pl
-Zawiera pliki nag³ówkowe potrzebne przy tworzeniu oprogramowania, oraz
+Zawiera pliki nag³ówkowe potrzebne przy tworzeniu oprogramowania oraz
 modu³ dla Turbo Vision.
 
 %prep
@@ -56,11 +59,10 @@ modu³ dla Turbo Vision.
 %patch -p1
 
 %build
-automake
+automake -a -c
 autoconf
-LDFLAGS="-s"
-CPPFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-implicit-templates"
-export LDFLAGS CPPFLAGS
+CPPFLAGS="%{rpmcflags} -fno-rtti -fno-implicit-templates"
+export CPPFLAGS
 %configure \
 	--enable-nls \
 	--with-exceptions \
@@ -73,8 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
 gzip -9nf ChangeLog TODO AUTHORS NEWS README
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
