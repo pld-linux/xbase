@@ -2,7 +2,7 @@ Summary:	Xbase DBMS Library
 Summary(pl):	Xbase - biblioteka dla ró¿nych baz danych
 Name:		xbase
 Version:	1.8.1
-Release:	8
+Release:	9
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -39,7 +39,7 @@ Bazowo projekt powstawa³ pod Linuxa ale obecnie jest u¿ywany na wielu
 platformach.
 
 %package devel
-Summary:	Xbase development
+Summary:	Xbase development files
 Summary(pl):	Xbase dla programistów
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
@@ -48,11 +48,11 @@ Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
-Include headers and Turbo Vision module in source.
+Xbase development files.
 
 %description devel -l pl
-Zawiera pliki nag³ówkowe potrzebne przy tworzeniu oprogramowania oraz
-modu³ dla Turbo Vision.
+Zawiera pliki nag³ówkowe potrzebne przy tworzeniu oprogramowania aplikacji
+u¿ywaj±cych Xbase.
 
 %prep
 %setup -q 
