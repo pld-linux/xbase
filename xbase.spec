@@ -3,32 +3,35 @@ Summary(pl):	Xbase biblioteka dla ró¿nych baz danych.
 Name:		xbase
 Version:	1.8.1
 Release:	7
-Copyright:	LGPL
+License:	LGPL
 Group:		Libraries
+Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source:		ftp://www.startech.keller.tx.us/pub/xbase/%name-%version.tar.gz
-Patch:		xbase-autoconf.patch
+Source0:	ftp://www.startech.keller.tx.us/pub/xbase/%name-%version.tar.gz
+Patch0:		xbase-autoconf.patch
 URL:		http://www.startech.keller.tx.us/xbase.html
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This product provides C and C++ programmers a class and function library for
-manipulating Xbase type datafiles and indices. This project was formerly
-known as Xbase for Linux, but as I have recieved input from several people
-who are compiling this on platforms other than Linux, I have renamed it to
-Xbase DBMS.  The main development of this library however, remains on the
-Linux platform utilizing the GCC public domain C/C++ compiler.
+This product provides C and C++ programmers a class and function
+library for manipulating Xbase type datafiles and indices. This
+project was formerly known as Xbase for Linux, but as I have recieved
+input from several people who are compiling this on platforms other
+than Linux, I have renamed it to Xbase DBMS. The main development of
+this library however, remains on the Linux platform utilizing the GCC
+public domain C/C++ compiler.
 
-XBase DBMS currently includes routines to support multi-user access for .DBF
-databases, fields, Dbase III and IV memo fields (variable length fields),
-dates, record and file locking and (.NDX) indices.  As of release 1.7.4,
-Xbase is compatible with dBASE III data, index and memo fields and also has
-support for some dBASE IV features.
+XBase DBMS currently includes routines to support multi-user access
+for .DBF databases, fields, Dbase III and IV memo fields (variable
+length fields), dates, record and file locking and (.NDX) indices. As
+of release 1.7.4, Xbase is compatible with dBASE III data, index and
+memo fields and also has support for some dBASE IV features.
 
 %description -l pl
-Bibliotek zawieraj±ca zespó³ procerur i funkcji pozwalaj±cych na podstawowe
-operacje na na formatacie danych dBASE III i czê¶ciowo dBASE IV.
+Bibliotek zawieraj±ca zespó³ procerur i funkcji pozwalaj±cych na
+podstawowe operacje na na formatacie danych dBASE III i czê¶ciowo
+dBASE IV.
 
 Bazowo projekt powstawa³ po Linuxa ale obecnie jest urzywany na wielu
 platformach.
@@ -37,6 +40,7 @@ platformach.
 Summary:	Xbase development
 Summary(pl):	Xbase delelopment
 Group:		Development/Libraries
+Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
@@ -44,8 +48,8 @@ Requires:	%{name} = %{version}
 Include headers and Turbo Vision module in source.
 
 %description devel -l pl
-Zawiera pliki nag³ówkowe potrzebne przy tworzeniu oprogramowania,
-oraz modu³ dla Turbo Vision.
+Zawiera pliki nag³ówkowe potrzebne przy tworzeniu oprogramowania, oraz
+modu³ dla Turbo Vision.
 
 %prep
 %setup -q 
