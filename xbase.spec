@@ -5,7 +5,7 @@ Version:	2.0.0
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://prdownloads.sourceforge.net/xdb/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/xdb/%{name}-%{version}.tar.gz
 URL:		http://linux.techass.com/projects/xdb/
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
