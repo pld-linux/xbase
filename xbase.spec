@@ -83,5 +83,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc html/{*.html,*.gif,*.jpg}
 %attr(755,root,root) %{_bindir}/xbase-config
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 %{_includedir}/xbase
