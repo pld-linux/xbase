@@ -2,7 +2,7 @@ Summary:	Xbase DBMS Library
 Summary(pl):	Xbase biblioteka dla ró¿nych baz danych.
 Name:		xbase
 Version:	1.8.1
-Release:	5
+Release:	6
 Copyright:	LGPL
 Group:		Applications/Libraries
 Group(pl):	Aplikacje/Biblioteki
