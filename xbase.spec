@@ -9,6 +9,9 @@ Group(de):	Libraries
 Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
+Group(pt_BR):	Bibliotecas
+Group(ru):	‚…¬Ã…œ‘≈À…
+Group(uk):	‚¶¬Ã¶œ‘≈À…
 Source0:	http://prdownloads.sourceforge.net/xdb/%{name}-%{version}.tar.gz
 URL:		http://linux.techass.com/projects/xdb/
 BuildRequires:	libstdc++-devel
@@ -42,6 +45,7 @@ Summary:	Xbase development files
 Summary(pl):	Xbase dla programistÛw
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
