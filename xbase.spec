@@ -26,8 +26,8 @@ of release 1.7.4, Xbase is compatible with dBASE III data, index and
 memo fields and also has support for some dBASE IV features.
 
 %description -l pl
-Bibliotek zawieraj±ca zespó³ procerur i funkcji pozwalaj±cych na
-podstawowe operacje na na formatacie danych dBASE III i czê¶ciowo
+Bibliotek zawieraj±ca zespó³ procedur i funkcji pozwalaj±cych na
+podstawowe operacje na na formacie danych dBASE III i czê¶ciowo
 dBASE IV.
 
 Bazowo projekt powstawa³ pod Linuksa ale obecnie jest u¿ywany na wielu
