@@ -47,7 +47,7 @@ Zawiera pliki nag³ówkowe potrzebne przy tworzeniu oprogramowania
 aplikacji u¿ywaj±cych Xbase.
 
 %prep
-%setup -q 
+%setup -q
 
 %build
 CPPFLAGS="%{rpmcflags} -fno-rtti -fno-implicit-templates"
