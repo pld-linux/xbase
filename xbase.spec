@@ -79,14 +79,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *gz
 %attr(755,root,root)/usr/bin/*
-%attr(755,root,root)/usr/lib/lib*.so*.*
+%attr(755,root,root)%{_libdir}/lib*.so*.*
 
 %files devel
 %defattr(644,root,root,755)
 %doc html/{*html,*gif,*jpg}
-%attr(755,root,root)/usr/lib/lib*.so
+%attr(755,root,root)%{_libdir}/lib*.so
 /usr/include/*
-/usr/lib/libxbase.la
+%{_libdir}/libxbase.la
 
 %changelog
 * Thu Apr 22 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
