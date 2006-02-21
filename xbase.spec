@@ -8,6 +8,7 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/xdb/%{name}-%{version}.tar.gz
 # Source0-md5:	f36852f0ba0c4d9e047e84c3269fde37
 Patch0:		%{name}-fix.patch
+Patch1:		%{name}-gcc4.patch
 URL:		http://linux.techass.com/projects/xdb/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -62,6 +63,7 @@ Statyczna biblioteka XBase.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
