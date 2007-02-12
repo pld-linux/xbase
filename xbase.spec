@@ -1,5 +1,5 @@
 Summary:	XBase - xbase-compatible C++ class library
-Summary(pl.UTF-8):   XBase - kompatybilna z xbase biblioteka klas C++
+Summary(pl.UTF-8):	XBase - kompatybilna z xbase biblioteka klas C++
 Name:		xbase
 Version:	2.1.1
 Release:	3
@@ -34,7 +34,7 @@ plików i rekordów pod systemami uniksowymi.
 
 %package devel
 Summary:	XBase development files
-Summary(pl.UTF-8):   Pliki dla programistów używających XBase
+Summary(pl.UTF-8):	Pliki dla programistów używających XBase
 License:	LGPL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
@@ -49,7 +49,7 @@ aplikacji używających Xbase.
 
 %package static
 Summary:	Static XBase library
-Summary(pl.UTF-8):   Statyczna biblioteka XBase
+Summary(pl.UTF-8):	Statyczna biblioteka XBase
 License:	LGPL
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
