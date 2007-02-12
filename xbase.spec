@@ -1,5 +1,5 @@
 Summary:	XBase - xbase-compatible C++ class library
-Summary(pl):	XBase - kompatybilna z xbase biblioteka klas C++
+Summary(pl.UTF-8):   XBase - kompatybilna z xbase biblioteka klas C++
 Name:		xbase
 Version:	2.1.1
 Release:	3
@@ -24,17 +24,17 @@ includes support for DBF (dBase version 3 and 4) data files, NDX and
 NTX indexes, and DBT (dBase version 3 and 4). It supports file and
 record locking under *nix OSes.
 
-%description -l pl
+%description -l pl.UTF-8
 XBase to kompatybilna z xbase (czyli dBase, FoxPro itp.) biblioteka
-klas C++. Jest przydatna do dost阷u do danych w plikach starych baz
-dBase 3 i 4, a tak縠 jako lekki silnik baz danych og髄nego
-przeznaczenia. Obs硊guje pliki baz DBF (dBase w wersji 3 i 4), indeksy
-NDX i NTX oraz DBT (dBase w wersji 3 i 4). Obs硊guje blokowanie
-plik體 i rekord體 pod systemami uniksowymi.
+klas C++. Jest przydatna do dost臋pu do danych w plikach starych baz
+dBase 3 i 4, a tak偶e jako lekki silnik baz danych og贸lnego
+przeznaczenia. Obs艂uguje pliki baz DBF (dBase w wersji 3 i 4), indeksy
+NDX i NTX oraz DBT (dBase w wersji 3 i 4). Obs艂uguje blokowanie
+plik贸w i rekord贸w pod systemami uniksowymi.
 
 %package devel
 Summary:	XBase development files
-Summary(pl):	Pliki dla programist體 u縴waj眂ych XBase
+Summary(pl.UTF-8):   Pliki dla programist贸w u偶ywaj膮cych XBase
 License:	LGPL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
@@ -43,13 +43,13 @@ Requires:	libstdc++-devel
 %description devel
 This package contains XBase development files.
 
-%description devel -l pl
-Ten pakiet zawiera pliki nag丑wkowe potrzebne przy tworzeniu
-aplikacji u縴waj眂ych Xbase.
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nag艂贸wkowe potrzebne przy tworzeniu
+aplikacji u偶ywaj膮cych Xbase.
 
 %package static
 Summary:	Static XBase library
-Summary(pl):	Statyczna biblioteka XBase
+Summary(pl.UTF-8):   Statyczna biblioteka XBase
 License:	LGPL
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
@@ -57,7 +57,7 @@ Requires:	%{name}-devel = %{version}-%{release}
 %description static
 Static XBase library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka XBase.
 
 %prep
