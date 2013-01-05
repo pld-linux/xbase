@@ -2,7 +2,7 @@ Summary:	XBase - xbase-compatible C++ class library
 Summary(pl.UTF-8):	XBase - kompatybilna z xbase biblioteka klas C++
 Name:		xbase
 Version:	2.1.1
-Release:	4
+Release:	5
 License:	LGPL v2.1+ (library), GPL v2+ (programs)
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/xdb/%{name}-%{version}.tar.gz
@@ -36,7 +36,7 @@ plików i rekordów pod systemami uniksowymi.
 %package devel
 Summary:	XBase development files
 Summary(pl.UTF-8):	Pliki dla programistów używających XBase
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
@@ -51,7 +51,7 @@ aplikacji używających Xbase.
 %package static
 Summary:	Static XBase library
 Summary(pl.UTF-8):	Statyczna biblioteka XBase
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -60,6 +60,19 @@ Static XBase library.
 
 %description static -l pl.UTF-8
 Statyczna biblioteka XBase.
+
+%package tools
+Summary:	XBase utilities for xbase files
+Summary(pl.UTF-8):	XBase - narzędzia do plików xbase
+License:	GPL v2+
+Group:		Applications/File
+Requires:	%{name} = %{version}-%{release}
+
+%description tools
+XBase utilities for xbase files.
+
+%description tools -l pl.UTF-8
+XBase - narzędzia do plików xbase.
 
 %prep
 %setup -q
@@ -95,17 +108,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/checkndx
-%attr(755,root,root) %{_bindir}/copydbf
-%attr(755,root,root) %{_bindir}/dbfutil1
-%attr(755,root,root) %{_bindir}/dbfxtrct
-%attr(755,root,root) %{_bindir}/deletall
-%attr(755,root,root) %{_bindir}/dumphdr
-%attr(755,root,root) %{_bindir}/dumprecs
-%attr(755,root,root) %{_bindir}/packdbf
-%attr(755,root,root) %{_bindir}/reindex
-%attr(755,root,root) %{_bindir}/undelall
-%attr(755,root,root) %{_bindir}/zap
 %attr(755,root,root) %{_libdir}/libxbase.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxbase.so.1
 
@@ -120,3 +122,17 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libxbase.a
+
+%files tools
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/checkndx
+%attr(755,root,root) %{_bindir}/copydbf
+%attr(755,root,root) %{_bindir}/dbfutil1
+%attr(755,root,root) %{_bindir}/dbfxtrct
+%attr(755,root,root) %{_bindir}/deletall
+%attr(755,root,root) %{_bindir}/dumphdr
+%attr(755,root,root) %{_bindir}/dumprecs
+%attr(755,root,root) %{_bindir}/packdbf
+%attr(755,root,root) %{_bindir}/reindex
+%attr(755,root,root) %{_bindir}/undelall
+%attr(755,root,root) %{_bindir}/zap
