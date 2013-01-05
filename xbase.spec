@@ -3,12 +3,13 @@ Summary(pl.UTF-8):	XBase - kompatybilna z xbase biblioteka klas C++
 Name:		xbase
 Version:	2.1.1
 Release:	4
-License:	LGPL (library), GPL (programs)
+License:	LGPL v2.1+ (library), GPL v2+ (programs)
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/xdb/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/xdb/%{name}-%{version}.tar.gz
 # Source0-md5:	f36852f0ba0c4d9e047e84c3269fde37
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-gcc4.patch
+Patch2:		%{name}-am.patch
 URL:		http://linux.techass.com/projects/xdb/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -64,6 +65,7 @@ Statyczna biblioteka XBase.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -73,7 +75,6 @@ Statyczna biblioteka XBase.
 %{__automake}
 CXXFLAGS="%{rpmcflags} -fno-implicit-templates"
 %configure \
-	--enable-nls \
 	--with-exceptions \
 	--with-index-ndx \
 	--with-index-ntx
@@ -94,17 +95,28 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/[!x]*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_bindir}/checkndx
+%attr(755,root,root) %{_bindir}/copydbf
+%attr(755,root,root) %{_bindir}/dbfutil1
+%attr(755,root,root) %{_bindir}/dbfxtrct
+%attr(755,root,root) %{_bindir}/deletall
+%attr(755,root,root) %{_bindir}/dumphdr
+%attr(755,root,root) %{_bindir}/dumprecs
+%attr(755,root,root) %{_bindir}/packdbf
+%attr(755,root,root) %{_bindir}/reindex
+%attr(755,root,root) %{_bindir}/undelall
+%attr(755,root,root) %{_bindir}/zap
+%attr(755,root,root) %{_libdir}/libxbase.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxbase.so.1
 
 %files devel
 %defattr(644,root,root,755)
 %doc html/{*.html,*.jpg}
 %attr(755,root,root) %{_bindir}/xbase-config
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libxbase.so
+%{_libdir}/libxbase.la
 %{_includedir}/xbase
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libxbase.a

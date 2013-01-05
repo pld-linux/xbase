@@ -1,0 +1,20 @@
+--- xbase-2.1.1/configure.in.orig	2013-01-05 16:14:20.452995450 +0100
++++ xbase-2.1.1/configure.in	2013-01-05 16:15:52.132993541 +0100
+@@ -55,7 +55,7 @@
+ AM_INIT_AUTOMAKE(xbase, 2.1.1)
+ 
+ # create this header file
+-AM_CONFIG_HEADER(xbase/xbconfig.h)
++AC_CONFIG_HEADERS(xbase/xbconfig.h)
+ 
+ #create a library
+ AM_PROG_LIBTOOL
+@@ -80,7 +80,7 @@
+ 
+ # get G++ version
+ if test "$GXX" = "yes"; then
+-  GXXVER=`${CXX} -v 2>&1 | grep version | cut -d " " -f 3 -`
++  GXXVER=`${CXX} -v 2>&1 | grep ' version ' | cut -d " " -f 3 -`
+   GXXVER="gcc${GXXVER}"
+ else
+   GXXVER=""
